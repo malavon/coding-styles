@@ -44,7 +44,7 @@ AllowShortLoopsOnASingleLine: false
 AlwaysBreakAfterDefinitionReturnType: None
 AlwaysBreakAfterReturnType: None
 AlwaysBreakBeforeMultilineStrings: false
-AlwaysBreakTemplateDeclarations: MultiLine
+AlwaysBreakTemplateDeclarations: Yes
 AttributeMacros:
   - __capability
 BinPackArguments: true
@@ -72,7 +72,6 @@ BraceWrapping:
 BreakBeforeBinaryOperators: NonAssignment
 BreakBeforeConceptDeclarations: Always
 BreakBeforeBraces: Attach
-BreakBeforeInheritanceComma: false
 BreakInheritanceList: AfterComma
 BreakBeforeTernaryOperators: false
 BreakConstructorInitializersBeforeComma: false
@@ -122,7 +121,7 @@ IndentExternBlock: Indent
 IndentRequiresClause: false
 IndentWidth:     4
 IndentWrappedFunctionNames: true
-InsertBraces:    false
+InsertBraces:    true
 InsertTrailingCommas: None
 JavaScriptQuotes: Leave
 JavaScriptWrapImports: true
@@ -131,7 +130,7 @@ LambdaBodyIndentation: OuterScope
 MacroBlockBegin: ''
 MacroBlockEnd:   ''
 MaxEmptyLinesToKeep: 1
-NamespaceIndentation: Inner
+NamespaceIndentation: None
 ObjCBinPackProtocolList: Never
 ObjCBlockIndentWidth: 2
 ObjCBreakBeforeNestedBlockParam: true
