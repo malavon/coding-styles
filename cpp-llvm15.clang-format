@@ -99,7 +99,6 @@ IfMacros:
   - KJ_IF_MAYBE
 IncludeBlocks:   Regroup
 IncludeCategories:
-IncludeCategories:
   - Regex:           '^<[^\.]>)'
     Priority:        5
   - Regex:           '^<.*\.h>'
@@ -108,8 +107,25 @@ IncludeCategories:
     Priority:        15
   - Regex:           '^(<|"(gtest|gmock|isl|json)/)'
     Priority:        50
-  - Regex:           '.*'
-    Priority:        99
+# base priority on number of slashes, group by directory depth
+  - Regex:           '^"([^/]*)\.h(c{0,2}|p{0,2}|x{0,2})"'
+    Priority:        90
+    SortPriority:    90
+  - Regex:           '^"([^/]*)(/[^/]*){1}\.h(c{0,2}|p{0,2}|x{0,2})"'
+    Priority:        90
+    SortPriority:    91
+  - Regex:           '^"([^/]*)(/[^/]*){2}\.h(c{0,2}|p{0,2}|x{0,2})"'
+    Priority:        90
+    SortPriority:    92
+  - Regex:           '^"([^/]*)(/[^/]*){3}\.h(c{0,2}|p{0,2}|x{0,2})"'
+    Priority:        90
+    SortPriority:    93
+  - Regex:           '^"([^/]*)(/[^/]*){4}\.h(c{0,2}|p{0,2}|x{0,2})"'
+    Priority:        90
+    SortPriority:    94
+  - Regex:           '^"([^/]*)(/[^/]*){5}\.h(c{0,2}|p{0,2}|x{0,2})"'
+    Priority:        90
+    SortPriority:    95
 IncludeIsMainRegex: '(Test|_test)?$'
 IncludeIsMainSourceRegex: ''
 IndentAccessModifiers: false
