@@ -1,5 +1,5 @@
 ---
-Checks:          'clang-diagnostic-*,clang-analyzer-*,*,-llvmlibc-implementation-in-namespace,-fuchsia-default-arguments-calls,-llvmlibc-callee-namespace,-llvmlibc-restrict-system-libc-headers,-modernize-use-trailing-return-type,-cppcoreguidelines-owning-memory,-fuchsia-default-arguments-declarations,-cppcoreguidelines-no-malloc,-hicpp-no-malloc,-altera-unroll-loops,-altera-id-dependent-backward-branch,-google-readability-namespace-comments,-fuchsia-multiple-inheritance,-fuchsia-overloaded-operator,-hicpp-noexcept-move,-cert-oop54-cpp,-bugprone-reserved-identifier,-modernize-return-braced-init-list'
+Checks:          'clang-diagnostic-*,clang-analyzer-*,*,-llvmlibc-implementation-in-namespace,-fuchsia-default-arguments-calls,-llvmlibc-callee-namespace,-llvmlibc-restrict-system-libc-headers,-modernize-use-trailing-return-type,-cppcoreguidelines-owning-memory,-fuchsia-default-arguments-declarations,-cppcoreguidelines-no-malloc,-hicpp-no-malloc,-altera-unroll-loops,-altera-id-dependent-backward-branch,-google-readability-namespace-comments,-fuchsia-multiple-inheritance,-fuchsia-overloaded-operator,-hicpp-noexcept-move,-cert-oop54-cpp,-bugprone-reserved-identifier,-modernize-return-braced-init-list,-llvm-namespace-comment,-hicpp-uppercase-literal-suffix,-hicpp-named-parameter,-cert-oop11-cpp,-readability-named-parameter,-hicpp-vararg,-hicpp-no-array-decay,-hicpp-use-auto'
 WarningsAsErrors: ''
 HeaderFilterRegex: ''
 AnalyzeTemporaryDtors: false
@@ -19,7 +19,9 @@ CheckOptions:
   - key:             cert-dcl16-c.IgnoreMacros
     value:           'true'
   - key:             modernize-use-auto.MinTypeNameLength
-    value:           '5'
+    value:           '20' // unsigned long long*
+  - key:             modernize-use-auto.RemoveStars
+    value:           'false'
   - key:             altera-struct-pack-align.MaxConfiguredAlignment
     value:           '128'
   - key:             bugprone-unused-return-value.CheckedFunctions
@@ -35,7 +37,7 @@ CheckOptions:
   - key:             hicpp-use-override.IgnoreDestructors
     value:           'false'
   - key:             cppcoreguidelines-macro-usage.CheckCapsOnly
-    value:           'false'
+    value:           'true'
   - key:             readability-suspicious-call-argument.DiceDissimilarBelow
     value:           '60'
   - key:             cert-dcl37-c.AllowedIdentifiers
@@ -652,8 +654,6 @@ CheckOptions:
     value:           'false'
   - key:             performance-inefficient-vector-operation.VectorLikeClasses
     value:           '::std::vector'
-  - key:             modernize-use-auto.RemoveStars
-    value:           'false'
   - key:             abseil-string-find-str-contains.IncludeStyle
     value:           llvm
   - key:             bugprone-implicit-widening-of-multiplication-result.IncludeStyle
