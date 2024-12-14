@@ -105,7 +105,7 @@ IncludeCategories:
     Priority:        10
   - Regex:           '^<.*'
     Priority:        15
-  - Regex:           '^(<|"(gtest|gmock|isl|json)/)'
+  - Regex:           '^(<|"(gtest|gmock|isl|json|catch[0-9])/)'
     Priority:        50
 # base priority on number of slashes, group by directory depth
   - Regex:           '^"([^/]*)\.h(c{0,2}|p{0,2}|x{0,2})"'
